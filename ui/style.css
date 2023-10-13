@@ -7,15 +7,15 @@
     width: var(--col-width-size)
 }
 
-.left {
+.col-drinks {
     background-color: #FFB695;
 }
 
-.mid {
+.col-snacks {
     background-color: #00AA95;
 }
 
-.right {
+.col-desserts {
     background-color: #AAAA95;
 }
 
@@ -34,4 +34,8 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#cart {
+    background-color: #f4b8f9;
 }
