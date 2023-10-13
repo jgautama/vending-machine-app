@@ -10,15 +10,16 @@
   </head>
   <body>
 	<script src="index.js"></script>
-    <div id="header" class="row">
+    <div id="vending-machine" class="row">
         <div class="column left">
             <h2>Drinks</h2>   
-            <img src="./assets/img/sprite-can.png" />    <!--https://m.media-amazon.com/images/I/71-29yqCPzL.jpg-->
+            <img src="./assets/img/sprite-can.png"/>
+            <p>$2.49</p>
         </div>
         <div class="column mid">
             <h2>Snacks</h2>
             <div class="item">
-                <img src="./assets/img/sour-patch.png" />
+                <img src="./assets/img/sour-patch.png"/>
                 <p>$5</p>
             </div>
             
@@ -26,19 +27,19 @@
         <div class="column right">
             <h2>Dessert</h2> 
             <div class="item">
-                <img src="./assets/img/oreo-bars.png" />
+                <img src="./assets/img/oreo-bars.png" name="oreo-bars"/>
                 <p>$3</p>
             </div>
         </div>
-        <div id="cart">
-            <h2>Cart</h2>
-            <ul id="cart-items" class="column summary-cart">
-                <!--items will be added to this list-->
-            </ul>
-            <p>Total: $$$</p>
-            
-            <button onclick="alert('N Items purchased!')">Purchase</button>
-        </div>
+    </div>
+    <div id="cart">
+        <h2>Cart</h2>
+        <ul id="cart-items" class=" summary-cart">
+            <!--items will be added to this list-->
+        </ul>
+        <p>Total: $<span id="cart-total">0.00</span></p>
+        
+        <button onclick="alert('N Items purchased!')">Purchase</button>
     </div>
     <!-- <div class="item-list">
         <div class="column left" style="background-color:#FFB695;">
