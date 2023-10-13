@@ -8,7 +8,7 @@ var items = [
 },
 {
     "name": "Oreo Ice Cream",
-    "image": "assets/",
+    "image": "assets/oreo-bars.png",
     "currency": "USD",
     "price": 5,
     "stock": 20,
