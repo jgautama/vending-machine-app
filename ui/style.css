@@ -1,0 +1,37 @@
+:root {
+    --col-width-size: 25%;
+}
+
+.column {
+    float: left;
+    width: var(--col-width-size)
+}
+
+.left {
+    background-color: #FFB695;
+}
+
+.mid {
+    background-color: #00AA95;
+}
+
+.right {
+    background-color: #AAAA95;
+}
+
+.row {
+    display: left;
+    
+}
+
+img {
+    width: 70%;
+    padding: 15%;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
