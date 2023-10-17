@@ -44,3 +44,13 @@ function updateCart() {
         summaryCart.appendChild(cartItem);
     });
 }
+
+function purchase() {
+    let totalAmount = document.getElementById("cart-total").innerHTML;
+    alert("purchased!\ntotal amount: $" + totalAmount)
+    
+    //reset items in the carts
+    document.getElementById("cart-items").innerHTML = "";
+    // set pricing total to $0 when user purchased / buy
+    document.getElementById("cart-total").innerHTML = "0";
+}
