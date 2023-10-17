@@ -37,6 +37,7 @@ function updateCart() {
     });
 }
 
+
 function getItems() {
     const xhr = new XMLHttpRequest();
     xhr.open("GET", "http://0.0.0.0:8080/items");
@@ -68,4 +69,14 @@ function displayHTMLItems(items) {
         }
         //let column = document.getElementsByClassName("col" + item.type)
     });
+}
+
+function purchase() {
+    let totalAmount = document.getElementById("cart-total").innerHTML;
+    alert("purchased!\ntotal amount: $" + totalAmount)
+    
+    //reset items in the carts
+    document.getElementById("cart-items").innerHTML = "";
+    // set pricing total to $0 when user purchased / buy
+    document.getElementById("cart-total").innerHTML = "0";
 }
