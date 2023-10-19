@@ -7,8 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HTML 5 Boilerplate</title>
     <link rel="stylesheet" href="style.css">
-  </head>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
   <body>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            console.log("Hello World");
+            const data = displayItems();
+        });
+    </script>
 	<script src="index.js"></script>
     <div id="vending-machine" class="row">
         <div class="column col-drinks">
@@ -43,13 +50,11 @@
             <p>Balance: $<span id="user-balance">0.00</span></p>
             <p>Total: $<span id="cart-total">0.00</span></p>
 
-            <button>$0.25</button>
-            <button>$1.00</button>
-            <button>$5.00</button>
-            <button onclick="purchase()">Purchase</button>
-            
-            <button onclick="alert('purchased')">Purchase</button>
+            <button class="currency">$<span id="quarter-dollar" onclick="addBalance(this)">0.25</span></button>
+            <button class="currency">$<span id="one-dollar" onclick="addBalance(this)">1.00</span></button>
+            <button class="currency">$<span id="five-dollar" onclick="addBalance(this)">5.00</span></button>
             <br />
+            <button onclick="purchase()">Purchase</button>
             <button onclick="getItems()">Retrieve Items</button>
         </div>
     </div>

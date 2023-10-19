@@ -10,7 +10,7 @@ async def get_items(request):
     response_obj = [
     {
         "name": "Sprite",
-        "type": "Drinks",
+        "type": "drinks",
         "image": "./assets/sprite-can.png",
         "currency": "USD",
         "price": 2.49,
@@ -18,7 +18,7 @@ async def get_items(request):
     },
     {
         "name": "Oreo Ice Cream",
-        "type": "Desserts",
+        "type": "desserts",
         "image": "./assets/oreo-bars.png",
         "currency": "USD",
         "price": 5,
@@ -26,7 +26,7 @@ async def get_items(request):
     },
     {
         "name": "Sour Patch Kids",
-        "type": "Snacks",
+        "type": "snacks",
         "image": "./assets/sour-patch.png",
         "currency": "USD",
         "price": 3,

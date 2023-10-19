@@ -10,11 +10,6 @@ This is your "startup" script that will run after DOM is ready
 this is a jQuery
 */
 
-$(document).ready(() => {
-    const data = getItems();
-    displayHTMLItems(data);
-});
-
 function addToCart(item, amount) {
     addItem(item, amount);
     updateCart();
@@ -37,8 +32,19 @@ function updateCart() {
     });
 }
 
+function addBalance(obj) {
+    let userBalance = document.getElementById("user-balance");
+    let amount = document.getElementById(obj.id).innerHTML;
+    
+    
+    console.log(amount);
+    console.log(userBalance.innerHTML)
+    userBalance.innerHTML = parseFloat(userBalance.innerHTML) + parseFloat(amount);
+    
+}
 
-function getItems() {
+function displayItems() {
+    console.log("I am inside getItems");
     const xhr = new XMLHttpRequest();
     xhr.open("GET", "http://0.0.0.0:8080/items");
     xhr.send();
@@ -46,6 +52,7 @@ function getItems() {
     xhr.onload = () => {
     if (xhr.readyState == 4 && xhr.status == 200) {
         const data = xhr.response;
+        displayHTMLItems(data)
         return data;
     } else {
         console.log(`Error: ${xhr.status}`);
@@ -57,26 +64,34 @@ function getItems() {
 function displayHTMLItems(items) {
     items.forEach(item => {
         
-        if (item.type == "Drinks") {
-        //     //console.log(item)
-            let column = document.getElementsByClassName("col-drinks");
-            console.log(column)
-            column[0].innerHTML += "<p>Hello World</p>"
-        //     let itemSection = document.createElement("div");
-        //     itemSection.innerHTML += "<p>item.name</p>";
-        //     column.appendChild(itemSection);
-            
-        }
-        //let column = document.getElementsByClassName("col" + item.type)
+        //if (item.type == "Drinks") {
+        console.log(item.type);
+        let column = document.getElementsByClassName("col-drinks");
+        column[0].innerHTML += "<p>Hello Drinks</p>";
+        //}
     });
 }
 
 function purchase() {
-    let totalAmount = document.getElementById("cart-total").innerHTML;
-    alert("purchased!\ntotal amount: $" + totalAmount)
+    let totalAmount = parseFloat(document.getElementById("cart-total").innerHTML);
+    let userBalance = parseFloat(document.getElementById("user-balance").innerHTML);
+    const remainingBalance = userBalance - totalAmount;
+
+    console.log(userBalance)
+    if (remainingBalance < 0.00) {
+        alert("insufficient amount! you need $" + remainingBalance + " more");
+
+    } else {
+        alert("purchased!\ntotal amount: $" + totalAmount);
+        //reset items in the carts
+        // set pricing total to $0 when user purchased / buy
+
+        document.getElementById("cart-items").innerHTML = "";
+        document.getElementById("cart-total").innerHTML = 0;
+        document.getElementById("user-balance").innerHTML = remainingBalance;
+        custCart.items = [];
+        custCart.total = 0;
+    }
     
-    //reset items in the carts
-    document.getElementById("cart-items").innerHTML = "";
-    // set pricing total to $0 when user purchased / buy
-    document.getElementById("cart-total").innerHTML = "0";
+
 }
