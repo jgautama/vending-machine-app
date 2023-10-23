@@ -39,7 +39,7 @@ function addBalance(obj) {
     
     console.log(amount);
     console.log(userBalance.innerHTML)
-    userBalance.innerHTML = parseFloat(userBalance.innerHTML) + parseFloat(amount);
+    userBalance.innerHTML = (parseFloat(userBalance.innerHTML) + parseFloat(amount)).toLocaleString('en-US', { maximumFractionDigits: 2 });
     
 }
 
@@ -66,10 +66,20 @@ function displayHTMLItems(items) {
         
         //if (item.type == "Drinks") {
         console.log(item.type);
-        let column = document.getElementsByClassName("col-drinks");
-        column[0].innerHTML += "<p>Hello Drinks</p>";
+        const className = ("col-" + item.type).toLowerCase();
+        let column = document.getElementsByClassName(className);
+        column[0].innerHTML += createDivItem(item);
         //}
     });
+}
+
+function createDivItem(item) {
+    let div = `<div class="item">
+    <img src="${item.image}"/>
+    <h3>${item.name}</h3>
+    <button onclick="addToCart('Sprite', ${item.price})">\$${item.price}</button>
+</div>`
+    return div;
 }
 
 function purchase() {
@@ -88,7 +98,7 @@ function purchase() {
 
         document.getElementById("cart-items").innerHTML = "";
         document.getElementById("cart-total").innerHTML = 0;
-        document.getElementById("user-balance").innerHTML = remainingBalance;
+        document.getElementById("user-balance").innerHTML = remainingBalance.toLocaleString('en-US', { maximumFractionDigits: 2 });;
         custCart.items = [];
         custCart.total = 0;
     }

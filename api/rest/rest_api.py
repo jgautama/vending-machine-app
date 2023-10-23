@@ -9,27 +9,27 @@ async def handler(request):
 async def get_items(request):
     response_obj = [
     {
-        "name": "Sprite",
+        "name": "Coca Cola",
         "type": "drinks",
-        "image": "./assets/sprite-can.png",
+        "image": "./assets/img/coca-cola-can.png",
         "currency": "USD",
         "price": 2.49,
         "stock": 15,
     },
     {
-        "name": "Oreo Ice Cream",
+        "name": "Haagen Dazs Coffee Ice Cream",
         "type": "desserts",
-        "image": "./assets/oreo-bars.png",
+        "image": "./assets/img/haagen-dazs-coffee-ice-cream.png",
         "currency": "USD",
-        "price": 5,
+        "price": 6,
         "stock": 20,
     },
     {
-        "name": "Sour Patch Kids",
+        "name": "Haribo",
         "type": "snacks",
-        "image": "./assets/sour-patch.png",
+        "image": "./assets/img/haribo-candy.png",
         "currency": "USD",
-        "price": 3,
+        "price": 2.50,
         "stock": 11,
     },
     ]
