@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
+    <title>Vending Machine App</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
@@ -50,12 +50,11 @@
             <p>Total: $<span id="cart-total">0.00</span></p>
             <p>Balance: $<span id="user-balance">0.00</span></p>
 
-            <button class="currency">$<span id="quarter-dollar" onclick="addBalance(this)">0.25</span></button>
-            <button class="currency">$<span id="one-dollar" onclick="addBalance(this)">1.00</span></button>
-            <button class="currency">$<span id="five-dollar" onclick="addBalance(this)">5.00</span></button>
+            <button>$<span class="currency" id="quarter-dollar" onclick="addBalance(this)">0.25</span></button>
+            <button>$<span class="currency" id="one-dollar" onclick="addBalance(this)">1.00</span></button>
+            <button>$<span class="currency" id="five-dollar" onclick="addBalance(this)">5.00</span></button>
             <br />
             <button onclick="purchase()">Purchase</button>
-            <button onclick="getItems()">Retrieve Items</button>
         </div>
     </div>
   </body>

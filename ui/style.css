@@ -39,3 +39,20 @@ img {
 #cart {
     background-color: #f4b8f9;
 }
+
+#vending-machine {
+    max-height: 50%;
+}
+
+.currency {
+    border: none;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+button {
+    margin: 0.1em;
+}
