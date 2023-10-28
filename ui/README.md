@@ -19,6 +19,3 @@ Import JQuery to render the items that client fetch from iohttp API server once 
         });
     </script>
 ```
-
-Dockerfile
-- nginx:alpine image
